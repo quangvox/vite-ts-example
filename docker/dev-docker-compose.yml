@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/dev.dockerfile
+    ports: 
+      - 8080:8080
+    volumes:
+      - ../src:/app/src
+    environment:
+      VITE_API_URL: ${VITE_API_URL}

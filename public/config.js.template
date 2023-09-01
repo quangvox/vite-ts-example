@@ -1,0 +1,3 @@
+window.config = {
+  viteAPIUrl: '{{ .Env.VITE_API_URL }}',
+};

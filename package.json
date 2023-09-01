@@ -1,0 +1,66 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vite-ui.umd.js",
+  "module": "./dist/vite-ui.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vite-ui.es.js",
+      "require": "./dist/vite-ui.umd.js"
+    }
+  },
+
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:preview": "tsc && vite build --mode preview",
+    "lint": "tsc && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "server": "npx ts-node ./src/mock-server/server.js",
+    "preview": "vite preview --host",
+    "test": "tsc && vitest",
+    "test:ci": "tsc && CI=true vitest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/deep-freeze": "^0.1.2",
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.5.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/uuid": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "http": "^0.0.1-security",
+    "husky": "^8.0.3",
+    "jsdom": "^22.1.0",
+    "prettier": "^3.0.1",
+    "stream": "^0.0.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.2",
+    "vite-plugin-svgr": "^3.2.0",
+    "vitest": "^0.34.1"
+  }
+}
