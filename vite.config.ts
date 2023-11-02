@@ -69,20 +69,14 @@ export default defineConfig(({ mode }) => {
       build: {
         target: 'ES2015',
         lib: {
-          entry: resolve(__dirname, 'src/App.tsx'),
+          entry: resolve(__dirname, 'src/builder.tsx'),
           name: 'ViteUI',
           formats: ['es', 'umd'],
           fileName: (format) => `vite-ui.${format}.js`,
         },
-        rollupOptions: {
-          external: ['react', 'react-dom'],
-          output: {
-            globals: {
-              react: 'React',
-              'react-dom': 'ReactDOM',
-            },
-          },
-        },
+      },
+      define: {
+        'process.env.NODE_ENV': '"production"',
       },
     };
   }
